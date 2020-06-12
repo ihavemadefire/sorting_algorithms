@@ -6,25 +6,25 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-        listint_t *outer, *inner;
+	listint_t *outer, *inner;
 	int flag = 0;
 
-        if ((*list)->next == NULL || *list == NULL)
-        {
-                return;
-        }
-        outer = *list;
+	if ((*list)->next == NULL || *list == NULL)
+	{
+		return;
+	}
+	outer = *list;
 	outer = outer->next;
-        while (outer)
-        {
+	while (outer)
+	{
 		flag = 0;
-                inner = outer;
+		inner = outer;
 		if (inner->prev != NULL && inner->n < inner->prev->n)
 		{
 			inner = inner->prev;
 			flag = 1;
 			flop(outer, inner, list);
-                        print_list(*list);
+			print_list(*list);
 		}
 		if (flag == 1)
 		{
@@ -32,17 +32,16 @@ void insertion_sort_list(listint_t **list)
 		}
 		else
 			outer = outer->next;
-        }
+	}
 }
 /**
  * flop - switches the postion of two nodes
  * @node1: one of the nodes to be floped
  * @node2: the other one
+ * @list: List head
  */
 void flop(listint_t *node1, listint_t *node2, listint_t **list)
 {
-      	/*closing gap*/
-	/*insert*/
 	if (node1->next == NULL)
 	{
 		/*tail*/
@@ -51,7 +50,7 @@ void flop(listint_t *node1, listint_t *node2, listint_t **list)
 		node1->next = node2;
 		node1->prev = node2->prev;
 		node2->prev = node1;
-        }
+	}
 	else if (node2->prev ==  NULL)
 	{
 		/*head*/
