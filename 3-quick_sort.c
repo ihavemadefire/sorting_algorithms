@@ -8,6 +8,8 @@ void quick_sort(int *array, size_t size)
 {
 	int low, high;
 
+	if (size < 2)
+		return;
 	low = 0;
 	high = ((int)size - 1);
 	quick_sort_rec(array, low, high, size);
