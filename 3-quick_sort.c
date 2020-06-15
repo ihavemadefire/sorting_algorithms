@@ -57,7 +57,7 @@ int lomuto(int *array, int low, int high, size_t size)
 			}
 		}
 	}
-	if (i + 1 != high && array[i+1] != array[high])
+	if (i + 1 != high && array[i + 1] != array[high])
 		flip(array, i + 1, high, size);
 	return (i + 1);
 }
