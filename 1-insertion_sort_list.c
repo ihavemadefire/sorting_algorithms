@@ -48,7 +48,17 @@ void flop(listint_t *node1, listint_t *node2, listint_t **list)
 	if (node1->next == NULL)
 	{
 		/*tail*/
-		node2->prev->next = node1;
+		if (node2->prev != NULL)
+			node2->prev->next = node1;
+		else
+		{
+			node1->prev = NULL;
+			node1->next = node2;
+			node2->next = NULL;
+			node2->prev = node1;
+			*list = node1;
+		}
+
 		node2->next = NULL;
 		node1->next = node2;
 		node1->prev = node2->prev;
