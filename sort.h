@@ -31,4 +31,5 @@ size_t find_smallest(int *array, size_t index, size_t size);
 int lomuto(int *array, int low, int high, size_t size);
 void flip(int *array, int a, int b, size_t size);
 void quick_sort_rec(int *array, int low, int high, size_t size);
+void counting_sort(int *array, size_t size);
 #endif
